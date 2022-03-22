@@ -6,7 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getTeams() {
     const response = await client
-        .from('premier-league-teams')
+        .from('premier_league_teams')
         .select('*');
 
     return response.body;
