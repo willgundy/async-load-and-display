@@ -62,8 +62,6 @@ async function displayPlayers() {
 
     const players = await getPlayers();
 
-    console.log(players);
-
     for (let player of players) {
         const playerEl = renderPlayers(player);
 
