@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
     displayTeams();
     displayStandings();
     displayMatches();
+    displayPlayers();
 });
 
 
@@ -54,5 +55,18 @@ async function displayMatches() {
         const matchEl = renderMatches(match);
 
         matchesContainer.append(matchEl);
+    }
+}
+
+async function displayPlayers() {
+
+    const players = await getPlayers();
+
+    console.log(players);
+
+    for (let player of players) {
+        const playerEl = renderPlayers(player);
+
+        playersContainer.append(playerEl);
     }
 }

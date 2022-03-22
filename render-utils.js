@@ -103,3 +103,24 @@ export function renderMatches(match) {
 
     return matchCard;
 }
+
+
+export function renderPlayers(player) {
+    const playerCard = document.createElement('div');
+    playerCard.classList.add('playerCard');
+
+    const playerName = document.createElement('p');
+    playerName.textContent = player.player;
+    const team = document.createElement('p');
+    team.textContent = player.squad;
+    const position = document.createElement('p');
+    position.textContent = player.position;
+    const nationality = document.createElement('p');
+    nationality.textContent = player.nation;
+    const age = document.createElement('p');
+    age.textContent = player.age;
+
+    playerCard.append(playerName, team, position, nationality, age);
+
+    return playerCard;
+}

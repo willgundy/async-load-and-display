@@ -32,9 +32,9 @@ export async function getMatches() {
 
 export async function getPlayers() {
     const response = await client
-        .from('premier_league_matches')
+        .from('premier_league_players')
         .select('*')
-        .lt('rank', 20);
+        .lt('rank', 15);
 
     return response.body;
 }

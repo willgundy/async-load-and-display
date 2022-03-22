@@ -43,3 +43,54 @@ h2 {
     margin-top: 10px;
     height: 25vh;
 }
+
+table {
+    width: 60vw;
+}
+
+th {
+    background-color: black;
+    color: white;
+    align-content: flex-start;
+
+}
+
+tr {
+    background-color: lightblue;
+}
+
+.lastFive {
+    display: flex;
+    flex-direction: row;
+}
+
+.matchCard {
+    width: 40vw;
+    height: 10vh;
+    background-color: rgb(203, 210, 211);
+    color: #2F4858;
+    border: 2px solid #2F4858;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 2px;
+}
+
+.matchCardTeamSection {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    padding: 0px;
+    margin: 5px;
+}
+
+.playerCard {
+    height: 20vh;
+    width: 20vw;
+    color: #16DB65;
+    background-color: black;
+    border: 2px solid #16DB65;
+    margin: 5px;
+}
