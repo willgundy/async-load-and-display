@@ -1,64 +1,24 @@
 
-body {
-    /* feel free to update these css variables for a quick theme */
-    
-    --color1: white;
-    --color2: white;
-    --color3: white;
-    --color4: white;
-    --color5: white;
-    
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-        
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
-    
-    --header-height: 80px;
-    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
-    --footer-height: 25px;
-    
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
-}
-
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: calc(var(--footer-height));
 }
 
 section {
-    background-color: var(--color5);
     max-width: 80%;
+    width: 80vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    flex-wrap: wrap;
 }
 
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
 }
 
 
@@ -67,25 +27,70 @@ h2 {
     font-weight: bold;
 }
 
-.gutter-right {
-    margin-right: 20px;
+.teamCard {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid black;
+    background-color: white;
+    flex-direction: column;
+    margin: 10px;
+    flex-wrap: wrap;
 }
 
-header img {
-    height: var(--header-height);
+.teamImage {
+    margin-top: 10px;
+    height: 25vh;
+}
+
+table {
+    width: 60vw;
+}
+
+th {
+    background-color: black;
+    color: white;
+    align-content: flex-start;
+
+}
+
+tr {
+    background-color: lightblue;
+}
+
+.lastFive {
+    display: flex;
+    flex-direction: row;
+}
+
+.matchCard {
+    width: 40vw;
+    height: 10vh;
+    background-color: rgb(203, 210, 211);
+    color: #2F4858;
+    border: 2px solid #2F4858;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 2px;
+}
+
+.matchCardTeamSection {
+    display: flex;
+    flex-direction: column;
 }
 
 p {
-    margin: var(--gutter);
+    padding: 0px;
+    margin: 5px;
 }
-  
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+
+.playerCard {
+    height: 20vh;
+    width: 20vw;
+    color: #16DB65;
+    background-color: black;
+    border: 2px solid #16DB65;
+    margin: 5px;
 }
