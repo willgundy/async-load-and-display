@@ -20,3 +20,60 @@ export function renderTeam(team) {
     
     return teamCardEl;
 }
+
+
+export function renderStandings(standing) {
+    const rowEl = document.createElement('tr');
+
+    const dummyColumnEl = document.createElement('td');
+
+    const teamNameEl = document.createElement('td');
+    teamNameEl.textContent = standing.name;
+
+    const gamesPlayedEl = document.createElement('td');
+    gamesPlayedEl.textContent = standing.MP;
+
+    const winsEl = document.createElement('td');
+    winsEl.textContent = standing.W;
+    
+    const drawsEl = document.createElement('td');
+    drawsEl.textContent = standing.D;
+
+    const lossesEl = document.createElement('td');
+    lossesEl.textContent = standing.L;
+
+    const goalsForEl = document.createElement('td');
+    goalsForEl.textContent = standing.GF;
+
+    const goalsAgainstEl = document.createElement('td');
+    goalsAgainstEl.textContent = standing.GA;
+
+    const goalDifferenctialEl = document.createElement('td');
+    goalDifferenctialEl.textContent = standing.GF - standing.GA;
+
+    const pointsEl = document.createElement('td');
+    pointsEl.textContent = standing.Pts;
+
+    const lastFive = document.createElement('td');
+    lastFive.classList.add('lastFive');
+
+    for (let result in standing.lastFive) {
+        const resultEl = document.createElement('p');
+
+        if (standing.lastFive[result] === 'w') {
+            resultEl.innerHTML = '&#9989;';
+        } else if (standing.lastFive[result] === 'l') {
+            resultEl.innerHTML = '&#128683;';
+        } else if (standing.lastFive[result] === 't') {
+            resultEl.innerHTML = '&#9898;';
+        } else {
+            resultEl.textContent = 'something is wrong in the array';
+        }
+
+        lastFive.append(resultEl);
+    }
+
+    rowEl.append(dummyColumnEl, teamNameEl, gamesPlayedEl, winsEl, drawsEl, lossesEl, goalsForEl, goalsAgainstEl, goalDifferenctialEl, pointsEl, lastFive);
+
+    return rowEl;
+}

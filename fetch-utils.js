@@ -11,3 +11,11 @@ export async function getTeams() {
 
     return response.body;
 }
+
+export async function getStandings() {
+    const response = await client
+        .from('premier_league_standings')
+        .select('*');
+
+    return response.body;
+}
