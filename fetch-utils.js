@@ -19,3 +19,22 @@ export async function getStandings() {
 
     return response.body;
 }
+
+
+export async function getMatches() {
+    const response = await client
+        .from('premier_league_matches')
+        .select('*')
+        .lt('matchNumber', 10);
+
+    return response.body;
+}
+
+export async function getPlayers() {
+    const response = await client
+        .from('premier_league_matches')
+        .select('*')
+        .lt('rank', 20);
+
+    return response.body;
+}

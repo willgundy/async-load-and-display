@@ -77,3 +77,29 @@ export function renderStandings(standing) {
 
     return rowEl;
 }
+
+
+export function renderMatches(match) {
+    const matchCard = document.createElement('div');
+    matchCard.classList.add('matchCard');
+
+    const matchCardTeamSection = document.createElement('div');
+    matchCardTeamSection.classList.add('matchCardTeamSection');
+
+    const team1Name = document.createElement('p');
+    team1Name.textContent = match.homeTeam;
+
+    const team2Name = document.createElement('p');
+    team2Name.textContent = match.awayTeam;
+
+    matchCardTeamSection.append(team1Name, team2Name);
+
+    const dateEl = document.createElement('p');
+    dateEl.textContent = match.result ? match.result : match.date;
+    const locationEl = document.createElement('p');
+    locationEl.textContent = match.Location;
+
+    matchCard.append(matchCardTeamSection, dateEl, locationEl);
+
+    return matchCard;
+}

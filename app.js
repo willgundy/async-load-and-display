@@ -1,11 +1,12 @@
 // import functions and grab DOM elements
 
-import { getTeams, getStandings } from './fetch-utils.js';
-import { renderTeam, renderStandings } from './render-utils.js';
+import { getTeams, getStandings, getMatches, getPlayers } from './fetch-utils.js';
+import { renderTeam, renderStandings, renderMatches, renderPlayers } from './render-utils.js';
 
 const teamsContainer = document.querySelector('#teams');
 const standingsTable = document.querySelector('#standings');
 const matchesContainer = document.querySelector('#matches');
+const playersContainer = document.querySelector('#players');
 
 // let state
 
@@ -17,6 +18,7 @@ const matchesContainer = document.querySelector('#matches');
 window.addEventListener('load', () => {
     displayTeams();
     displayStandings();
+    displayMatches();
 });
 
 
@@ -37,11 +39,20 @@ async function displayStandings() {
 
     const standings = await getStandings();
 
-    console.log(standings);
-
     for (let row of standings) {
         const rowEl = renderStandings(row);
 
         standingsTable.append(rowEl);
+    }
+}
+
+async function displayMatches() {
+
+    const matches = await getMatches();
+
+    for (let match of matches) {
+        const matchEl = renderMatches(match);
+
+        matchesContainer.append(matchEl);
     }
 }
